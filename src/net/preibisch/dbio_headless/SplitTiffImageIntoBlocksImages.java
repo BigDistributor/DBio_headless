@@ -49,7 +49,7 @@ public class SplitTiffImageIntoBlocksImages implements Callable<Boolean> {
 		File outFolder = new File(output);
 		if (!outFolder.isDirectory())
 			throw new Exception("Invalid Output !");
-		RandomAccessibleInterval<FloatType> image = LoadTIFF.load(file.getAbsolutePath());
+		RandomAccessibleInterval<FloatType> image = LoadTIFF.load(file);
 //		RandomAccessibleInterval<FloatType> image = IOFunctions.openAs32Bit(file);
 		ExecutorService service = Threads.createExService(5);
 		

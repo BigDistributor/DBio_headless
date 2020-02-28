@@ -19,7 +19,7 @@ import net.preibisch.distribution.algorithm.blockmanagement.io.BlockFileManager;
 import net.preibisch.distribution.algorithm.controllers.items.Metadata;
 import net.preibisch.distribution.algorithm.multithreading.Threads;
 import net.preibisch.distribution.io.DataExtension;
-import net.preibisch.distribution.io.img.XMLFile;
+import net.preibisch.distribution.io.img.xml.XMLFile;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
