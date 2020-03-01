@@ -14,6 +14,7 @@ import net.preibisch.distribution.algorithm.controllers.items.Job;
 import net.preibisch.distribution.algorithm.controllers.items.Metadata;
 import net.preibisch.distribution.io.img.xml.XMLFile;
 import net.preibisch.distribution.tools.helpers.ArrayHelpers;
+import net.preibisch.mvrecon.fiji.spimdata.boundingbox.BoundingBox;
 import picocli.CommandLine;
 import picocli.CommandLine.Option;
 
@@ -46,7 +47,7 @@ public class GenerateMetaBlocksFile implements Callable<Void> {
 		long[] blocksizes = ArrayHelpers.fill(BasicBlockInfoGenerator.BLOCK_SIZE, inputData.getDims().length);
 		Map<Integer, BasicBlockInfo> blocks = BasicBlockInfoGenerator.divideIntoBlockInfo(inputData.bb());
 
-		Metadata md = new Metadata(Job.get().getId(),input,output,blocksizes,blocks);
+		Metadata md = new Metadata(Job.get().getId(),input,output,new BoundingBox(inputData.bb()),blocksizes,blocks);
 		md.toJson(new File(metadata));
 		return null;
 	}

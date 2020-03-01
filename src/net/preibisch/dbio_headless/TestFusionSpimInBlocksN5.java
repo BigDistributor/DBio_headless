@@ -43,7 +43,7 @@ public class TestFusionSpimInBlocksN5 {
 		Map<Integer, BasicBlockInfo> blocks = BasicBlockInfoGenerator.divideIntoBlockInfo(inputFile.bb());
 
 		long[] bsizes = ArrayHelpers.fill(BasicBlockInfoGenerator.BLOCK_SIZE, inputFile.getDimensions().length);
-		Metadata md = new Metadata(Job.get().getId(),input_path,output_path, bsizes, blocks);
+		Metadata md = new Metadata(Job.get().getId(),input_path,output_path, new BoundingBox(inputFile.bb()) ,bsizes, blocks);
 		int total = md.getBlocksInfo().size();
 		System.out.println(md.toString());
 
