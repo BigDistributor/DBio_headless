@@ -47,7 +47,6 @@ public class BlockExtractorUsingMetaBlocks implements Callable<Void> {
 		System.exit(0);
 	}
 
-	@Override
 	public Void call() throws IncompatibleTypeException, IOException, SpimDataException {
 		BufferedReader br;
 

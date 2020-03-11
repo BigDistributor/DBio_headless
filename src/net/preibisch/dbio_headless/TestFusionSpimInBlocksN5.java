@@ -72,7 +72,6 @@ class Task implements Runnable {
 		this.binfo = (BasicBlockInfo) binfo;
 	}
 
-	@Override
 	public void run() {
 		try {
 			MyLogger.log().info("Started " + i);

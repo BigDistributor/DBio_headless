@@ -40,7 +40,6 @@ public class GenerateMetaBlocksFile implements Callable<Void> {
 		System.exit(0);
 	}
 
-	@Override
 	public Void call() throws IncompatibleTypeException, SpimDataException, IOException {
 
 		XMLFile<FloatType> inputData = XMLFile.XMLFile(input);
@@ -48,7 +47,7 @@ public class GenerateMetaBlocksFile implements Callable<Void> {
 		Map<Integer, BasicBlockInfo> blocks = BasicBlockInfoGenerator.divideIntoBlockInfo(inputData.bb());
 
 		Metadata md = new Metadata(Job.get().getId(),input,output,new BoundingBox(inputData.bb()),blocksizes,blocks);
-		md.toJson(new File(metadata));
+		md.toJson(metadata);
 		return null;
 	}
 

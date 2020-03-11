@@ -38,7 +38,6 @@ public class SplitTiffImageIntoBlocksImages implements Callable<Boolean> {
 		System.exit(0);
 	}
 
-	@Override
 	public Boolean call() throws Exception {
 		long size = blockSize != null ? blockSize : BasicBlockInfoGenerator.BLOCK_SIZE;
 		
